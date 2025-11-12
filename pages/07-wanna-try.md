@@ -157,3 +157,105 @@ backgroundSize: 100%
 * Есть создание wiki по проекту
 
 https://qoder.com/
+
+---
+layout: image-right
+image: https://codelabs.developers.google.com/static/gemini-cli-hands-on/img/ffd8ddfede565612.png
+backgroundSize: 100%
+---
+
+# CLI Assistant
+
+<span>Gemini CLI</span>
+
+- Большое контекстное окно
+- от 20$ платная подписка
+- нужен VPN
+- Бесплатно 1000 запросов в день
+- Требует google аккаунта не в РФ
+
+https://gemini.google.com/
+
+---
+layout: image-right
+image: https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.prod.website-files.com%2F67ce28cfec624e2b733f8a52%2F6826a6227b1fbd47034d1936_claude-code.webp
+backgroundSize: 100%
+---
+
+# CLI Assistant
+
+<span>Claude Code</span>
+
+- Очень урезанный бесплатный функционал (45 сообщений в 5 часов)
+- ~20$ платная подписка (10-40 промптов каждые 5 часов)
+- 200$ подписка как роскошный максимум
+- топовые модели Sonnet/Opus
+- требует VPN
+
+https://claude.com
+
+---
+layout: image-right
+image: https://camo.githubusercontent.com/6d2d9a8d839bed3d9dc1bf62d47f0767e19906ce76d369a78ef9805dbfb34609/68747470733a2f2f61696465722e636861742f6173736574732f73637265656e636173742e737667
+backgroundSize: 100%
+---
+
+# CLI Assistant
+
+<span>Aider</span>
+
+- Open Source
+- Поддержка локальных и облачных провайдеров
+- Voice-to-code режим
+- Нет поддержки MCP при генерации
+- Есть MCP-server для самого Aider
+
+https://aider.chat
+
+---
+layout: image-right
+image: http://cursor.com/docs-static/_next/image?url=%2Fdocs-static%2Fimages%2Fwebagent%2Fcursor-web-1.png&w=1920&q=75
+backgroundSize: 100%
+---
+
+# Cloud решения
+
+- Cursor Cloud Agents
+- Github Codex, Github Copilot
+- devin.ai
+
+---
+
+# Модели для использования
+
+## OpenRouter
+
+| Model             | Open/Closed | Context | Price | LeaderBoard |
+| ----------------- | ----------- | ------- | ----- | ----------- |
+| grok code fast 1  | Closed      | 256k    | $0.53 | 19          |
+| Claude Sonnet 4.5 | Closed      | 1M      | $6.00 | 18          |
+| GLM 4.6           | Closed      | 1M      | $0.99 | 12          |
+| MiniMax M2        | Open        | 205k    | $0.53 | 7           |
+| Kimi K2 Thinking  | Open        | 256k    | $1.20 | 18          |
+| GPT-5 Codex       | Closed      | 400k    | $3.44 | 1           |
+
+---
+layout: image-right
+image: https://ollama.com/public/cloud.png
+backgroundSize: 80%
+glowSeed: 206
+---
+
+# Модели для использования
+
+## Ollama
+
+- deepseek-r1 (8b - 14b)
+- qwen3 (4b, 8b, 14b)
+- phi3 (4b, 14b)
+
+---
+layout: image
+image: https://miro.medium.com/v2/resize:fit:4800/format:webp/1*FOBfzk25B0wwDMIepG2p4Q.png
+backgroundSize: 80%
+---
