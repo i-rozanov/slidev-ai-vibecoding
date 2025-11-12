@@ -236,22 +236,67 @@ layout: quote
 
 <span>Последовательная генерация токенов</span>
 
-<div
-    v-motion
-    :initial="{ opacity: 0, width: '0ch' }"
-    :enter="{ opacity: 1,width: '30ch'}"
-    class="inline-block overflow-hidden whitespace-nowrap"
->
-    This text types itself onto the screen.
-</div>
+<TypewriterText text="Если Вы когда-либо общались с ИИ-чатами, то замечали, что текст выводится последовательно. На самом деле, это происходит потому, что ответ генерируется и отображается по частям — так называемыми токенами — в режиме потоковой передачи (streaming). Каждый токен (чаще всего это слово, подслово или знак препинания) появляется на экране сразу после того, как модель его сгенерировала, не дожидаясь завершения всего ответа. Такой подход не только ускоряет восприятие ответа, но и создаёт эффект живого диалога, будто собеседник думает и говорит в реальном времени. Кроме того, постепенное появление текста снижает когнитивную нагрузку и делает взаимодействие с ИИ более естественным и интуитивным." />
 
-Если Вы когда-либо общались с ИИ-чатами, то замечали, что текст выводится последовательно. На самом деле, это происходит потому, что ответ генерируется и отображается по частям — так называемыми токенами — в режиме потоковой передачи (streaming). Каждый токен (чаще всего это слово, подслово или знак препинания) появляется на экране сразу после того, как модель его сгенерировала, не дожидаясь завершения всего ответа. Такой подход не только ускоряет восприятие ответа, но и создаёт эффект живого диалога, будто собеседник думает и говорит в реальном времени. Кроме того, постепенное появление текста снижает когнитивную нагрузку и делает взаимодействие с ИИ более естественным и интуитивным.
-
+---
+layout: two-cols
 ---
 
 # Как работает LLM
 
-<span>Дуолинго анимация</span>
+<div text-3xl italic> Напиши стихотворение:</div>
+
+<div text-3xl italic> Жили у бабуси...</div>
+
+<br>
+<br>
+<br>
+<v-click>
+<img 
+    src="/pages/include/duolingo.gif"
+    height = 60%
+    width = 60%
+/>
+</v-click>
+
+::right::
+
+<div>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">миллионы</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">два</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">три</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">квартиры</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">жили</span>
+    <br>
+    <br>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">весёлых</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">доллары</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">молчать</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">мошенники</span>
+    <br>
+    <br>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">бабуси</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">реституция</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">деньги</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">вернули</span>
+    <br>
+    <br>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">обманули</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">у</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">собаки</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">гуся</span>
+    <span text-5 class="border border-solid rounded-md px-2 py-0.5 mr-3">пожилая</span>
+</div>
+<br>
+<br>
+
+<div text-4xl>___________________</div>
+<div text-3><br></div>
+<div text-4xl>___________________</div>
+<div text-3><br></div>
+<div text-4xl>___________________</div>
+<div text-3><br></div>
+<div text-4xl>___________________</div>
 
 ---
 
