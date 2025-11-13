@@ -13,6 +13,8 @@ preload: false
 clicks: 0
 glowSeed: 50
 mdc: true
+addons:
+  - fancy-arrow
 ---
 
 # Инструменты ИИ в разработке: Ожидание vs Реальность

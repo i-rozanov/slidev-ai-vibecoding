@@ -1,6 +1,4 @@
 {
-    "slidev.include": [
-        "**/slides.md",
-        "slides.md"
-    ]
+  "slidev.include": ["**/slides.md", "slides.md"],
+  "slidev.port": 3030
 }

@@ -226,18 +226,18 @@ backgroundSize: 100%
 
 ---
 
-# Модели для использования
+# Модели для облачного использования
 
 ## OpenRouter
 
-| Model             | Open/Closed | Context | Price | LeaderBoard |
-| ----------------- | ----------- | ------- | ----- | ----------- |
-| grok code fast 1  | Closed      | 256k    | $0.53 | 19          |
-| Claude Sonnet 4.5 | Closed      | 1M      | $6.00 | 18          |
-| GLM 4.6           | Closed      | 1M      | $0.99 | 12          |
-| MiniMax M2        | Open        | 205k    | $0.53 | 7           |
-| Kimi K2 Thinking  | Open        | 256k    | $1.20 | 18          |
-| GPT-5 Codex       | Closed      | 400k    | $3.44 | 1           |
+| Model             | Open/Closed | Context | Price/1M | LeaderBoard |
+| ----------------- | ----------- | ------- | -------- | ----------- |
+| grok code fast 1  | Closed      | 256k    | $0.53    | 19          |
+| Claude Sonnet 4.5 | Closed      | 1M      | $6.00    | 18          |
+| GLM 4.6           | Closed      | 1M      | $0.99    | 12          |
+| MiniMax M2        | Open        | 205k    | $0.53    | 7           |
+| Kimi K2 Thinking  | Open        | 256k    | $1.20    | 18          |
+| GPT-5 Codex       | Closed      | 400k    | $3.44    | 1           |
 
 ---
 layout: image-right
@@ -246,7 +246,7 @@ backgroundSize: 80%
 glowSeed: 206
 ---
 
-# Модели для использования
+# Модели для локального использования
 
 ## Ollama
 
