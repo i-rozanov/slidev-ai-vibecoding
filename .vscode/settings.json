@@ -1,4 +1,7 @@
 {
   "slidev.include": ["**/slides.md", "slides.md"],
-  "slidev.port": 3030
+  "slidev.port": 3030,
+  "stm32-for-vscode.openOCDPath": false,
+  "stm32-for-vscode.makePath": false,
+  "stm32-for-vscode.armToolchainPath": false
 }
