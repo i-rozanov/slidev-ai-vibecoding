@@ -25,6 +25,9 @@ jobs:
       - name: Setup @antfu/ni
         run: npm i -g @antfu/ni
 
+      - name: etup playwright
+        run: npx playwright install
+
       - name: Install dependencies
         run: nci
 
