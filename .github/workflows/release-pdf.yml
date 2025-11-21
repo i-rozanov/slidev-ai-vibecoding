@@ -1,0 +1,58 @@
+name: Export PDF and Create Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # Trigger on version tags like v1.0
+  workflow_dispatch: # Allow manual trigger for testing
+
+permissions:
+  contents: write # Required for creating releases
+
+jobs:
+  export-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
+      - name: Install dependencies
+        run: nci
+
+      - name: Export presentation to PDF
+        run: |
+          # Create output directory
+          mkdir -p exports
+          # Export the presentation as PDF
+          npm run export -- --dark --output exports/presentation.pdf
+
+      - name: List exported files
+        run: ls -la exports/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            exports/presentation.pdf
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          body: |
+            ## Release ${{ github.ref_name }}
+
+            This release contains the exported PDF of the Slidev presentation.
+
+            ### Presentation Details
+            - Exported from commit: ${{ github.sha }}
+            - Presentation title: Вайбкодинг здорового человека
+            - Export date: ${{ github.event.repository.updated_at }}
+          draft: false
+          prerelease: false
