@@ -60,3 +60,27 @@
 <br>
 
 [https://agents.md/](https://agents.md/)
+
+---
+
+# Qoder: агентная платформа для разработки
+
+<div class="mt-4 p-4 bg-purple-900/30 rounded-lg border border-purple-700/50 text-white">
+  <strong class="text-purple-200">Wiki Mode</strong>: агенты «читают» вашу кодовую базу и создают живую документацию, разбирая код и отвечая на вопрос "как работает проект". 
+</div>
+
+<div class="mt-4 p-4 bg-indigo-900/30 rounded-lg border border-indigo-700/50 text-white">
+  <strong class="text-indigo-200">Quest Mode</strong>:  spec-first подход <br>
+  <span>— описываете задачу на естественном языке;</span><br>
+  <span>— агент генерирует спецификацию задачи на базе RAG от Wiki;</span><br>
+  <span>— вносит правки по требованию в спецификацию, просит ревью;</span><br>
+  <span>— после выполнения показывает отчёт по выполненной работе, предлагает повторное ревью.</span>
+</div>
+
+<div class="mt-4 p-4 bg-emerald-900/20 rounded-lg border border-emerald-500/50 text-white">
+  <strong class="text-emerald-200">Результат:</strong> 
+  <br>
+  — разработчик фокусируется на стратегии, а рутину выполняют агенты;
+  <br>
+  — благодаря RAG Wiki по проекту проще работать с legacy.
+</div>
