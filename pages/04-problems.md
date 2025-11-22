@@ -1,4 +1,71 @@
 ---
+layout: section
+---
+
+# Проблемы вайбкодинга
+
+---
+layout: center
+background: /backgrounds/dark-code.jpg
+class: "text-white"
+---
+
+# Размер контекста
+
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+
+  <div class="p-5 rounded-xl border border-blue-700/40 bg-blue-900/20 text-white">
+    <div class="text-blue-300 font-bold mb-3 flex items-center gap-2">
+      <span>📊</span> <span>Современные LLM</span>
+    </div>
+    <div class="text-sm leading-relaxed">
+      Топовые модели имеют контекстное окно <span class="text-blue-200">256k-1024k токенов</span>.<br>
+      <span class="text-gray-400 mt-2 inline-block">Даже такие размеры — компромисс между возможностями и стоимостью.</span>
+    </div>
+  </div>
+
+  <div class="p-5 rounded-xl border border-amber-600/50 bg-amber-900/15 text-white">
+    <div class="text-amber-300 font-bold mb-3 flex items-center gap-2">
+      <span>⚠️</span> <span>Цена масштаба</span>
+    </div>
+    <div class="text-sm leading-relaxed">
+      Увеличение контекста ведет к:<br>
+      — <span class="text-amber-200">Экспоненциальному росту</span> времени генерации токена;<br>
+      — <span class="text-amber-200">Удорожанию</span> обучения и инференса;<br>
+      — <span class="text-amber-200">Падению точности</span> при очень больших размерах.
+    </div>
+  </div>
+
+</div>
+
+<div class="mt-6 p-5 rounded-xl border border-red-700/40 bg-red-900/20 text-white max-w-4xl mx-auto">
+  <div class="text-red-300 font-bold mb-2 flex items-center gap-2">
+    <span>🎯</span> <span>Фундаментальная проблема</span>
+  </div>
+  <div class="text-sm leading-relaxed">
+    <span class="text-rose-400 font-medium">Мы не можем отправить весь проект в один запрос</span> — подсовываем лишь <span class="text-amber-300">часть проекта</span>, но не всегда очевидно — <span class="text-amber-300">какую именно?</span>
+  </div>
+</div>
+
+<div class="mt-6 rounded-xl border border-purple-700/50 bg-purple-900/30 overflow-hidden">
+  <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+    <div class="p-6 text-left border-r border-purple-700/30">
+      <div class="text-purple-300 font-bold mb-2 flex items-center gap-2">
+        <span>📦</span> <span>vendor/marketing-client</span>
+      </div>
+      <div class="text-sm text-gray-300 leading-relaxed">
+        Реальный размер пакета
+      </div>
+    </div>
+    <div class="p-6 flex items-center justify-center">
+      <div class="text-purple-200 font-bold text-6xl tracking-tight">
+        442k
+      </div>
+    </div>
+  </div>
+</div>
+
+---
 layout: image
 image: "/pages/include/edge.png"
 preload: false
@@ -12,7 +79,7 @@ preload: false
     <h3 class="text-2xl font-bold mb-4 text-purple-200 flex justify-end items-center gap-2">
       <span>Недостаточный контекст</span>
     </h3>
-    <ul class="space-y-3 text-lg">
+    <ul class="space-y-3 text-lg mr-4">
       <li class="flex items-center justify-end gap-3 hover:text-purple-200 transition-colors">
         <span class="text-purple-100">Неточный результат</span>
         <div class="w-2 h-2 bg-purple-500/50 rounded-full"></div>
@@ -76,7 +143,8 @@ preload: false
 -->
 
 ---
-preload: false
+preload: true
+glowSeed: 55
 ---
 
 <div absolute top-10 class="text-center">
@@ -84,14 +152,16 @@ preload: false
 </div>
 
 <div class="text-container">
-  <div absolute top-30 v-click.at="1" v-click.hide="2" text-blue-20>
+  <div absolute top-30 v-click.at="[1]" text-blue-20>
     <span>DO NOT DROP THE DATABASE</span>
   </div>
 
-  <div absolute top-30 v-click.at="2" text-red-6 @click="toggleText">
+  <div absolute top-30 v-click.at="2" text-red-6>
     <span text-gray-8>DO NOT </span><span>DROP THE DATABASE</span>
   </div>
-  <img v-click.at="2" v-click.hide="3" src="/pages/include/bear.png" class="corner-image">
+  
+  <img v-click.at="[2]" src="/pages/include/bear.png" class="corner-image">
+  
   <div absolute top-50 v-click.at="3">
     <span class="blue-text">Pudota</span> <span class="white-text">tietokanta. </span> <br/>
     <span class="blue-text">Älä poista</span> <span class="white-text">tietokantaa.</span>
@@ -144,7 +214,7 @@ preload: false
     right: 400px;
     width: 300px;
     height: auto;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 </style>
@@ -161,6 +231,18 @@ preload: false
 -->
 
 ---
+layout: center
+---
+
+# ИИ-агент Replit удалил продовую базу на 1200 клиентов и попытался скрыть это
+
+21 июля 2025
+
+<div class="h-[60%] flex items-center justify-center">
+  <img src="https://media.tproger.ru/user-uploads/111041/2025-07-21/b87f1d5d-dd7d-42bd-9ff1-1e9cd80e3a62.jpeg" class="rounded-lg max-h-[380px]">
+</div>
+
+---
 
 # Декомпозиция и фокусировка
 
@@ -169,12 +251,12 @@ preload: false
     <!-- Бабблы -->
     <div class="grid grid-cols-[2fr_2fr] gap-3" style="height: calc(380px - 4rem);">
       <!-- Баббл "Сложная задача" — растянут по высоте -->
-      <div 
+      <div
         class="p-4 rounded-xl border border-amber-600/40 bg-amber-900/20 text-white flex flex-col items-center justify-center text-center"
         style="height: 100%;"
       >
         <div class="text-amber-300 font-bold text-base mb-2">Сложная задача</div>
-        <img 
+        <img
           src="/pages/include/cant_understand.png"
           class="mt-1 max-w-full max-h-[160px] object-contain"
         >
@@ -201,8 +283,8 @@ preload: false
 
   <!-- Правая колонка: изображение -->
   <div class="flex items-start justify-center pt-2">
-    <img 
-      src="/pages/include/jun.png" 
+    <img
+      src="/pages/include/jun.png"
       class="rounded-lg border border-gray-700/50 shadow object-contain max-h-[380px]"
       style="width: auto; height: auto;"
     >
@@ -215,44 +297,73 @@ preload: false
 -->
 
 ---
+preload: false
+---
 
-## Почему vibe-coding выстрелил и попал?
+# Почему vibe-coding выстрелил и попал?
 
 <div class="grid grid-cols-[3fr_2fr] gap-6 p-6 max-w-6xl mx-auto">
   <!-- Столбик бабблов -->
   <div class="flex flex-col gap-3">
-    <div class="p-3 rounded-lg border border-cyan-600/40 bg-cyan-900/20 text-cyan-200 text-sm font-medium text-center">
-      MVP
-    </div>
-    <div class="p-3 rounded-lg border border-purple-600/40 bg-purple-900/20 text-purple-200 text-sm font-medium text-center">
-      Прототипирование
-    </div>
-    <div class="p-3 rounded-lg border border-indigo-600/40 bg-indigo-900/20 text-indigo-200 text-sm font-medium text-center">
-      Простые скрипты
-    </div>
-    <div class="p-3 rounded-lg border border-pink-600/40 bg-pink-900/20 text-pink-200 text-sm font-medium text-center">
-      Низкий порог вхождения
-    </div>
-    <div class="p-3 rounded-lg border border-amber-600/40 bg-amber-900/20 text-amber-200 text-sm font-medium text-center">
-      Небольшие задачи
-    </div>
-    <div class="p-3 rounded-lg border border-violet-600/40 bg-violet-900/20 text-violet-200 text-sm font-medium text-center">
-      Объяснение кода
-    </div>
-    <div class="p-3 rounded-lg border border-blue-600/40 bg-blue-900/20 text-blue-200 text-sm font-medium text-center">
-      Автодополнение
-    </div>
+    <v-clicks>
+      <template v-for="(item, i) in items" :key="i">
+        <div
+          :class="[
+            // Base classes
+            'p-2 rounded-lg border text-m font-medium text-center transition-all duration-500 ease-out',
+            // Animation classes based on click
+            $clicks < (i + 1)
+              ? 'opacity-0 -translate-x-10'
+              : 'opacity-100 translate-x-0',
+            // Color classes per index
+            i === 0 ? 'border-cyan-600/40 bg-cyan-900/20 text-cyan-200' :
+            i === 1 ? 'border-purple-600/40 bg-purple-900/20 text-purple-200' :
+            i === 2 ? 'border-indigo-600/40 bg-indigo-900/20 text-indigo-200' :
+            i === 3 ? 'border-pink-600/40 bg-pink-900/20 text-pink-200' :
+            i === 4 ? 'border-amber-600/40 bg-amber-900/20 text-amber-200' :
+            i === 5 ? 'border-violet-600/40 bg-violet-900/20 text-violet-200' :
+            i === 6 ? 'border-blue-600/40 bg-blue-900/20 text-blue-200' :
+            ''
+          ]"
+        >
+          {{ item }}
+        </div>
+      </template>
+    </v-clicks>
   </div>
 
-  <!-- Изображение справа -->
+  <!-- Изображение справа: appears on the 8th click -->
   <div class="flex items-center justify-center">
-    <div class="w-full aspect-video bg-gray-800/30 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-500 text-xs">
-      <img 
-      src="/pages/include/robot.png" 
+    <div
+      :class="[
+        'w-full aspect-video bg-gray-800/30 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-500 text-xs transition-all duration-500 ease-out',
+        $clicks < 8 ? 'opacity-0 translate-x-10' : 'opacity-100 translate-x-0'
+      ]"
+    >
+    <img
+      src="/pages/include/robot.png"
+      class="bg-gray-800/30 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-500 text-xs"
     >
     </div>
   </div>
 </div>
+
+<!-- Hidden triggers to ensure 8 click steps -->
+<v-clicks>
+  <span v-for="n in 8" :key="n" class="hidden" />
+</v-clicks>
+
+<script setup>
+const items = [
+  'MVP',
+  'Прототипирование',
+  'Простые скрипты',
+  'Низкий порог вхождения',
+  'Небольшие задачи',
+  'Объяснение кода',
+  'Автодополнение'
+]
+</script>
 
 ---
 preload: false
@@ -266,8 +377,8 @@ preload: false
 
   <!-- Image on the left – unchanged -->
   <div class="w-full md:w-1/3 max-w-xs bg-gray-800/40 border border-gray-700/50 rounded-lg overflow-hidden flex-shrink-0">
-    <img 
-      src="https://i.ibb.co/XZqZNh67/image-2025-11-22-14-56-26.png" 
+    <img
+      src="https://i.ibb.co/XZqZNh67/image-2025-11-22-14-56-26.png"
       class="w-full h-auto block"
       alt="Industrial code complexity"
     >

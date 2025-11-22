@@ -256,6 +256,6 @@ glowSeed: 206
 
 ---
 layout: image
-image: https://miro.medium.com/v2/resize:fit:4800/format:webp/1*FOBfzk25B0wwDMIepG2p4Q.png
+image: "/pages/include/crewai.webp"
 backgroundSize: 80%
 ---
