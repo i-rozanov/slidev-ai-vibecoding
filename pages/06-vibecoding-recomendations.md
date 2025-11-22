@@ -1,0 +1,215 @@
+---
+layout: section
+---
+
+# Вайбкодинг здорового человека
+
+---
+background: "#0f0f1b"
+class: "text-white"
+---
+
+# Основные рекомендации
+
+<div class="mt-6 grid grid-cols-2 gap-5 w-full h-[calc(100%-110px)] px-6" style="box-sizing: border-box;">
+
+  <div class="p-4 rounded-xl border border-purple-700/50 bg-purple-900/30 text-white flex flex-col justify-start">
+    <strong class="text-purple-200 flex items-center gap-2 text-sm font-bold">Проектные документы</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-2 opacity-95">
+      Добавляйте в проект файлы с нужными для задачи разделами из документации, чтобы дать ИИ расширенный контекст.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-indigo-700/50 bg-indigo-900/30 text-white flex flex-col justify-start">
+    <strong class="text-indigo-200 flex items-center gap-2 text-sm font-bold">Примеры и шаблоны</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-2 opacity-95">
+      Покажите ИИ пример формата выходных данных, которые хотите получить.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-violet-700/50 bg-violet-900/25 text-white flex flex-col justify-start">
+    <strong class="text-violet-200 flex items-center gap-2 text-sm font-bold">Чёткие ограничения</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-2 opacity-95">
+      Перечислите в виде списка ограничения реализации: библиотеки, паттерны, антипаттерны.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-emerald-500/50 bg-emerald-900/25 text-white flex flex-col justify-start">
+    <strong class="text-emerald-200 flex items-center gap-2 text-sm font-bold">Внешние знания</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-2 opacity-95">
+      Для задач в специфической предметной области добавьте информацию из wiki или документации API.
+    </span>
+  </div>
+
+</div>
+
+---
+background: "#0f0f1b"
+class: "text-white"
+---
+
+## CLI: лучшие практики
+
+<div class="mt-6 grid grid-cols-3 gap-4 w-full px-6 pb-16 max-w-full box-border">
+
+  <div class="p-4 rounded-xl border border-purple-700/50 bg-purple-900/30 text-white flex flex-col justify-start">
+    <strong class="text-purple-200 flex items-center gap-2 text-sm font-bold"><span>📋</span>Планируйте</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Не спешите переходить сразу к сложным задачам. Уделите время, чтобы спланировать запрос к ИИ и подать ему на вход достаточный контекст, чтобы получить лучший результат.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-indigo-700/50 bg-indigo-900/30 text-white flex flex-col justify-start">
+    <strong class="text-indigo-200 flex items-center gap-2 text-sm font-bold"><span>📝</span>Spec-driven development</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Чтобы получить структурированные и предсказуемые результаты, запишите детализированные и декомпозированные задачи в виде мини-требований, которым будет следовать агент.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-cyan-700/50 bg-cyan-900/30 text-white flex flex-col justify-start">
+    <strong class="text-cyan-200 flex items-center gap-2 text-sm font-bold"><span>🧪</span>Test-Driven Development</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Пусть ИИ сначала пишет тест-кейсы, а затем генерирует минимально необходимый код, который будет успешно их проходить. Это позволяет поддерживать фокус и проверяемость.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-amber-700/50 bg-amber-900/30 text-white flex flex-col justify-start">
+    <strong class="text-amber-200 flex items-center gap-2 text-sm font-bold"><span>🛡</span>Песочница для безопасности</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Используйте песочницу, чтобы предотвратить неожиданные побочные эффекты от экспериментов или рискованных изменений. Код-агенты имеют команды для работы в режиме песочницы.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-emerald-500/50 bg-emerald-900/30 text-white flex flex-col justify-start">
+    <strong class="text-emerald-200 flex items-center gap-2 text-sm font-bold"><span>⏪</span>Контрольные точки</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Используйте контрольные точки и отмену действий, чтобы быстро откатить изменения, если ИИ-агент пошёл в неверном направлении.
+    </span>
+  </div>
+
+  <div class="p-4 rounded-xl border border-pink-700/50 bg-pink-900/30 text-white flex flex-col justify-start">
+    <strong class="text-pink-200 flex items-center gap-2 text-sm font-bold"><span>⚡️</span>Функции командной строки</strong>
+    <span class="text-[0.85rem] leading-relaxed mt-1 opacity-95">
+      Изучите встроенные команды своего CLI-агента, чтобы максимизировать полезный эффект.
+    </span>
+  </div>
+
+</div>
+
+---
+
+<style>
+/* Обёртка для таймлайна — ограничиваем высоту и центрируем */
+.workflow-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* уменьшено с 1.5rem */
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: var(--slidev-font-sans);
+  padding-left: 28px;
+  /* Ограничиваем высоту, чтобы уместиться под заголовком */
+  max-height: calc(100vh - 180px); /* 180px — примерно высота заголовка + отступы */
+  overflow: hidden;
+}
+
+/* Вертикальная линия — теперь не на всю высоту родителя, а только контента */
+.workflow-timeline::before {
+  content: '';
+  position: absolute;
+  top: 12px;       /* отступ сверху */
+  bottom: 12px;    /* отступ снизу */
+  left: 14px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -28px;
+  font-size: 1.4rem; /* чуть меньше */
+  line-height: 1;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+/* Уменьшаем шрифты, если нужно */
+.workflow-timeline h4 {
+  font-size: 1.15rem !important;
+  margin: 0 0 0.4rem !important;
+}
+
+.workflow-timeline p {
+  font-size: 0.9rem !important;
+  color: #aaa !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+</style>
+
+# Рабочий процесс будущего
+
+<div class="workflow-timeline">
+  <div class="timeline-item">
+    <div class="timeline-marker">🎯</div>
+    <div class="timeline-content">
+      <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Описание цели</h4>
+      <p style="margin: 0; color: #aaa; font-size: 0.95rem;">
+        Качественно описывайте, что вы хотите получить. ИИ понимает контекст, требования и ограничения из описаний на естественном языке
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker">📋</div>
+    <div class="timeline-content">
+      <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Умное планирование</h4>
+      <p style="margin: 0; color: #aaa; font-size: 0.95rem;">
+        ИИ создаёт детализированные технические планы, учитывает архитектурные решения и предлагает оптимальные стратегии реализации
+      </p>
+    </div>
+  </div>
+
+  <!-- остальные пункты аналогично -->
+  <div class="timeline-item">
+    <div class="timeline-marker">🏗</div>
+    <div class="timeline-content">
+      <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Автономная реализация</h4>
+      <p style="margin: 0; color: #aaa; font-size: 0.95rem;">
+        ИИ-агенты реализуют задачи, изменяя множество файлов, управляя интеграциями и генерируя релевантные тест-кейсы
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker">🔍</div>
+    <div class="timeline-content">
+      <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Умное ревью</h4>
+      <p style="margin: 0; color: #aaa; font-size: 0.95rem;">
+        ИИ обеспечивает детализированное код-ревью, анализ безопасности кода, предложения по оптимизации производительности.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker">🚀</div>
+    <div class="timeline-content">
+      <h4 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Автоматизированное развёртывание</h4>
+      <p style="margin: 0; color: #aaa; font-size: 0.95rem;">
+        ИИ управляет пайплайнами, следит за производительностью, предлагает варианты оптимизации
+      </p>
+    </div>
+  </div>
+</div>

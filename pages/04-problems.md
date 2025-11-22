@@ -300,7 +300,7 @@ layout: center
 preload: false
 ---
 
-# Почему vibe-coding выстрелил и попал?
+# Почему вайбкодинг выстрелил и попал?
 
 <div class="grid grid-cols-[3fr_2fr] gap-6 p-6 max-w-6xl mx-auto">
   <!-- Столбик бабблов -->
@@ -349,9 +349,9 @@ preload: false
 </div>
 
 <!-- Hidden triggers to ensure 8 click steps -->
-<v-clicks>
-  <span v-for="n in 8" :key="n" class="hidden" />
-</v-clicks>
+<v-click>
+  <span class="hidden" />
+</v-click>
 
 <script setup>
 const items = [

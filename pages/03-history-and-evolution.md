@@ -316,68 +316,301 @@ background: linear-gradient(135deg, #1a0529, #2d0b42)
 </style>
 
 ---
-
-# Tools, Function calling, MCP
-
----
-layout: two-cols-header
+layout: center
+class: text-center
+preload: false
 ---
 
 # LLM: От слов к действиям
 
-::left::
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
 
-### **Без Tools**
+  <!-- Without Tools -->
+  <div class="p-4 rounded-xl border border-rose-700/40 bg-rose-900/20 text-white">
+    <div class="text-5xl mb-3">🧠</div>
+    <div class="text-rose-200 font-bold mb-4">Без инструментов</div>
+    <div class="text-sm mb-4">
+      <span class="text-rose-300">Только текст.</span> Интеллект в изоляции.<br>
+      Отвечает — но не действует.
+    </div>
+    <!-- Mini cards for bullet points -->
+    <div class="flex flex-wrap justify-center gap-2">
+      <div class="rounded-lg border border-rose-700/50 bg-rose-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Отвечает на вопросы
+      </div>
+      <div class="rounded-lg border border-rose-700/50 bg-rose-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Пишет код и письма
+      </div>
+      <div class="rounded-lg border border-rose-700/50 bg-rose-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Мир ограничен <span class="text-rose-300">контекстом</span>
+      </div>
+    </div>
 
-> Только текст
->
-> Интеллект в изоляции
->
-> _Отвечает, но не действует_
+  </div>
 
-::right::
+  <!-- With Tools -->
+  <div class="p-4 rounded-xl border border-emerald-600/50 bg-emerald-900/20 text-white">
+    <div class="text-5xl mb-3">🛠️</div>
+    <div class="text-emerald-200 font-bold mb-4">С инструментами</div>
+    <div class="text-sm mb-4">
+      <span class="text-emerald-300">Интеллект + действия.</span> Теперь он может взаимодействовать с миром.
+    </div>
+    <!-- Mini cards for bullet points -->
+    <div class="flex flex-wrap justify-center gap-2">
+      <div class="rounded-lg border border-emerald-600/50 bg-emerald-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Ищет актуальные данные
+      </div>
+      <div class="rounded-lg border border-emerald-600/50 bg-emerald-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Выполняет код
+      </div>
+      <div class="rounded-lg border border-emerald-600/50 bg-emerald-800/20 backdrop-blur-sm px-3 py-2 text-xs text-center min-w-[100px]">
+        Взаимодействует через <span class="text-emerald-300">API</span>
+      </div>
+    </div>
 
-### **С Tools**
+  </div>
 
-> Реальные действия
->
-> Интеллект, усиленный возможностями
->
-> _Ищет данные, вычисляет, взаимодействует с миром_
+</div>
+
+<div class="mt-8 text-gray-300 max-w-3xl px-4 text-sm leading-relaxed">
+  Инструменты дают LLM «руки» — превращая <span class="text-rose-300">генератор текста</span> в <span class="text-emerald-300">активного помощника</span>.
+</div>
+
+---
+layout: center
+class: text-center
+preload: false
+---
+
+<div class="mt-10 max-w-4xl mx-auto" scale="300">
+
+```mermaid
+sequenceDiagram
+    participant User as 👤 Пользователь
+    participant LLM as 🧠 LLM
+    participant MCP as 🔧 MCP Orchestrator
+    participant Tools as 🛠️ Реестр инструментов
+    participant Playwright as 🎭 Playwright
+
+    User->>LLM: "Протестируй кнопку входа на auchan.ru"
+    LLM->>MCP: Запросить доступ к инструментам
+    MCP->>Tools: list_tools()
+    Tools-->>MCP: ["playwright", "browser"]
+    MCP->>LLM: ✅ Инструмент playwright доступен
+
+    LLM->>MCP: execute_tool("playwright", {action: "click", selector: "button#login"})
+    MCP->>Playwright: Инициализировать браузер
+    Playwright-->>MCP: ✅ Браузер готов
+
+    MCP->>Playwright: click(button#login)
+    Playwright->>WebPage: Перейти на auchan.ru
+    WebPage-->>Playwright: Страница загружена
+    Playwright->>WebPage: Кликнуть кнопку входа
+    WebPage-->>Playwright: ✅ Клик успешен
+
+    Playwright-->>MCP: успех + скриншот
+    MCP-->>LLM: Результат выполнения инструмента
+    LLM-->>User: "✅ Тест кнопки входа пройден! [скриншот]"
+```
+
+</div>
+
+---
+layout: center
+class: text-center
+preload: false
+---
+
+<div class="mt-4 max-w-4xl mx-auto" scale="170">
+
+```mermaid
+sequenceDiagram
+    participant Client as 📱 MCP-клиент
+    participant Server as 🔌 MCP-сервер
+    participant LLM as 🧠 Claude/GPT/Gemini
+
+    Client->>Server: Initialize
+    Server->>Client: Список инструментов
+
+    Client->>LLM: "Я хочу создать файл, какой инструмент<br> использовать? <список инструментов>"
+    LLM->>Client: Вызов WriteFile с параметрами <br>{path: "new_file.txt", content: "Привет, мир!"}
+    Client->>Server: writeFile(new_file.txt)
+    Server->>Client: Готово!
+
+    Client->>LLM: Контекст:<br>1) Пользователь: Я хочу создать файл, какой инструмент<br> использовать? <список инструментов><br>2) LLM: Вызов WriteFile с параметрами <br>{path: "new_file.txt", content: "Привет, мир!"}<br><br>Пользователь: WriteTool ответил "Готово!"
+    LLM->>Client: Готово!
+
+```
+
+</div>
+
+---
+layout: center
+class: text-center
+preload: false
+---
+
+<div class="mt-5 max-w-4xl mx-auto" scale="200">
+
+```mermaid
+sequenceDiagram
+    participant User as 👨‍💻 Пользователь
+    participant Client as 📱 MCP-клиент
+    participant Server as 🔌 MCP-сервер
+    participant LLM as 🧠 Claude/GPT/Gemini
+
+    User->>Client: "найди новость про AI и сохрани в файл news.md"
+
+    Client->>Server: Initialize
+    Server->>Client: Список инструментов
+
+    Client->>LLM: 1) Пользователь: найди новость про AI и сохрани в файл news.md<br>Инструменты: ...
+
+    LLM->>Client: вызови инструмент search_news с параметром query = "AI"
+    Client->>Server: вызов: search_news(query: AI)
+    Server->>Client: ответ: *список новостей*
+
+    Client->>LLM: 1) Пользователь: найди новость про AI и сохрани в файл news.md<br>2) LLM: вызови инструмент search_news с параметром query = "AI"<br>3) TOOL: *список новостей*<br>Инструменты: ...
+
+    LLM->>Client: вызови инструмент write_file с параметром path = "~/news.md"
+    Client->>Server: вызов: write_file(~/news.md)
+    Server->>Client: ответ: *успешно сохранено
+
+    Client->>LLM: 1) Пользователь: найди новость про AI и сохрани в файл news.md<br>2) LLM: вызови инструмент search_news с параметром query = "AI"<br>3) TOOL: *список новостей*<br>4) LLM: вызови инструмент write_file с параметром path = "~/news.md"<br>5) TOOL: "Успешно сохранено"<br>Инструменты: ...
+
+    LLM->>Client: Отлично, всё готово
+    Client->>User: Отлично, всё готово
+```
+
+</div>
 
 ---
 
-# Даём LLM руки: Сила инструментов
+# MCP Серверы
 
-<div class="grid grid-cols-2 gap-12 mt-10 items-center">
-<div class="text-center">
-
-<div class="text-6xl mb-4">🧠</div>
-
-#### **Без инструментов — это умный генератор текста**
-
-<p class="text-sm mt-2">Эрудированный, красноречивый, но... без рук. Его знания ограничены тренировочными данными.</p>
-<ul class="text-sm mt-4">
-<li>Отвечает на вопросы</li>
-<li>Пишет письма и код</li>
-<li>Но его мир ограничен текстом.</li>
-</ul>
+<div class="grid grid-cols-7 gap-2 mt-2 max-h-[50vh] overflow-y-auto px-4">
+  <div v-for="item in categories" :key="item.text"
+    class="rounded-lg border border-cyan-500/30 bg-cyan-900/10 backdrop-blur-sm p-3 text-center text-2"
+  >
+    <div class="text-xl mb-1">{{ item.icon }}</div>
+    <div>{{ item.text }}</div>
+  </div>
 </div>
-<div class="text-center">
 
-<div class="text-6xl mb-4">🛠️</div>
-
-#### **С Tools — он обретает конечности, помощник с инструментами**
-
-<p class="text-sm mt-2">Может "поискать" в интернете, "запустить" код, "взаимодействовать" с вашими приложениями. Теория превращается в практику.</p>
-<ul class="text-sm mt-4">
-<li>Получает актуальные данные (поиск)</li>
-<li>Выполняет код (интерпретатор)</li>
-<li>Взаимодействует с системами (API)</li>
-</ul>
-
+<div class="absolute bottom-6 left-0 right-0 text-center text-xs opacity-80">
+  <a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank" class="text-cyan-300 hover:text-cyan-100 transition">📚 GitHub: awesome-mcp-servers</a> •  
+  <a href="https://glama.ai/mcp/servers" target="_blank" class="text-cyan-300 hover:text-cyan-100 transition">🌐 Glama MCP Directory</a>
 </div>
-</div>
+
+<script setup>
+const categories = [
+  { icon: '🔗', text: 'Aggregators' },
+  { icon: '🎨', text: 'Art & Culture' },
+  { icon: '📐', text: 'Architecture & Design' },
+  { icon: '📂', text: 'Browser Automation' },
+  { icon: '🧬', text: 'Biology, Medicine & Bioinformatics' },
+  { icon: '☁️', text: 'Cloud Platforms' },
+  { icon: '👨‍💻', text: 'Code Execution' },
+  { icon: '🤖', text: 'Coding Agents' },
+  { icon: '🖥️', text: 'Command Line' },
+  { icon: '💬', text: 'Communication' },
+  { icon: '👤', text: 'Customer Data Platforms' },
+  { icon: '🗄️', text: 'Databases' },
+  { icon: '📊', text: 'Data Platforms' },
+  { icon: '🚚', text: 'Delivery' },
+  { icon: '🛠️', text: 'Developer Tools' },
+  { icon: '🧮', text: 'Data Science Tools' },
+  { icon: '📟', text: 'Embedded Systems' },
+  { icon: '📂', text: 'File Systems' },
+  { icon: '💰', text: 'Finance & Fintech' },
+  { icon: '🎮', text: 'Gaming' },
+  { icon: '🧠', text: 'Knowledge & Memory' },
+  { icon: '🗺️', text: 'Location Services' },
+  { icon: '🎯', text: 'Marketing' },
+  { icon: '📊', text: 'Monitoring' },
+  { icon: '🎥', text: 'Multimedia Process' },
+  { icon: '🔎', text: 'Search & Data Extraction' },
+  { icon: '🔒', text: 'Security' },
+  { icon: '🌐', text: 'Social Media' },
+  { icon: '🏃', text: 'Sports' },
+  { icon: '🎧', text: 'Support & Service Management' },
+  { icon: '🌎', text: 'Translation Services' },
+  { icon: '🎧', text: 'Text-to-Speech' },
+  { icon: '🚆', text: 'Travel & Transportation' },
+  { icon: '🔄', text: 'Version Control' },
+  { icon: '🏢', text: 'Workplace & Productivity' },
+]
+</script>
 
 ---
 
+# Вайб-кодинг
+
+<div class="flex flex-row items-start mt-4 gap-6 h-[calc(100vh-8rem)] pb-0">
+  <!-- Картинка слева -->
+  <div class="w-1/3 max-w-xs bg-gray-800/40 border border-gray-700/50 rounded-lg overflow-hidden flex-shrink-0">
+    <img
+      src="/pages/include/2025-11-22_18-54.png"
+      class="w-full h-auto block"
+      loading="lazy"
+    >
+  </div>
+
+  <!-- Текст справа -->
+  <div class="w-2/3 max-w-2xl bg-rose-900/30 rounded-xl border border-blue-600/50 p-5 overflow-y-auto">
+    <div class="text-white text-sm leading-relaxed">
+      Есть новый способ программирования, который я называю "Вайб-кодингом": ты целиком поддаёшься настроению и забываешь, что код вообще существует. Это возможно, потому что LLM становятся слишком крутыми. Я просто говорю с Composer и едва касаюсь клавиатуры. Я спрашиваю самые идиотские вещи вроде "уменьши вдвое отступ у боковой панели", потому что слишком лень искать, где это. Я всегда жму "Принять всё", я больше не читаю диффы. Когда вылезают сообщения об ошибках, я просто копирую их и вставляю без комментариев, и обычно этого хватает. Код выходит за пределы моего обыденного понимания, мне приходится реально потратить время и вчитаться в него. Иногда LLM не может пофиксить баг, так что я обхожу его или прошу внести рандомные изменения до тех пор, пока ошибка не исчезнет. Неплохо для мусорных проектов, но в целом забавно. Я делаю проект или веб-приложение, но не программирую — я просто вижу всякое, говорю всякое, запускаю всякое, копирую и вставляю всякое, и оно в основном работает.
+    </div>
+  </div>
+</div>
+
+---
+layout: image
+image: "/pages/include/morpheus.jpg"
+preload: false
+---
+
+<div class="absolute inset-0 flex flex-col justify-between items-center py-8 px-10">
+
+<h1 class="text-center text-5xl font-bold mt-40">Да что ты такое?</h1>
+
+  <div class="flex gap-8 w-full">
+    <!-- Строгое определение (left column – unchanged) -->
+    <div class="w-1/2 text-left">
+      <div class="bg-white/10 border border-cyan-300/40 rounded-lg p-6 backdrop-blur-sm">
+        <div class="text-cyan-300 font-bold text-lg mb-3">Строгое определение</div>
+        <div class="space-y-2">
+          <div class="bg-cyan-900/30 border border-cyan-500/30 rounded px-3 py-2 text-cyan-200 text-sm font-mono text-left">
+            Код как чёрный ящик
+          </div>
+          <div class="bg-cyan-900/30 border border-cyan-500/30 rounded px-3 py-2 text-cyan-200 text-sm font-mono text-left">
+            Любая отладка — силами ИИ без участия человека
+          </div>
+          <div class="bg-cyan-900/30 border border-cyan-500/30 rounded px-3 py-2 text-cyan-200 text-sm font-mono text-left">
+            Проверяется результат, а не код
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Рабочее определение (right column – now right-aligned) -->
+    <div class="w-1/2 text-right">
+      <div class="bg-white/10 border border-pink-400/40 rounded-lg p-6 backdrop-blur-sm">
+        <div class="text-pink-400 font-bold text-lg mb-3">Рабочее определение</div>
+        <div class="space-y-2">
+          <div class="bg-pink-900/30 border border-pink-500/30 rounded px-3 py-2 text-pink-200 text-sm font-mono text-right">
+            AI как код-ассистент
+          </div>
+          <div class="bg-pink-900/30 border border-pink-500/30 rounded px-3 py-2 text-pink-200 text-sm font-mono text-right">
+            Комбинированная отладка силами ИИ и человека
+          </div>
+          <div class="bg-pink-900/30 border border-pink-500/30 rounded px-3 py-2 text-pink-200 text-sm font-mono text-right">
+            Человек проверяет код и контролирует процесс
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+```
