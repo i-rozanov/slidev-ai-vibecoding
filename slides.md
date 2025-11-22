@@ -17,6 +17,7 @@ export:
   timeout: 60000 # Increase from default 30000ms to 60000ms
 addons:
   - fancy-arrow
+  - slidev-addon-excalidraw
 ---
 
 # Инструменты ИИ в разработке: Ожидание vs Реальность

@@ -76,8 +76,6 @@ preload: false
 -->
 
 ---
-layout: image
-# image: "/pages/include/language.jpg"
 preload: false
 ---
 
@@ -161,3 +159,151 @@ preload: false
 Способ второй, требующий лингвистической сноровки: стройте фразы так, чтобы модель попросту не могла проигнорировать ваш посыл. Скажите ей: “Оставь базу данных невредимой”. Знаете, люди, которые посылают разнообразные магические сигналы во Вселенную, тоже советуют не использовать отрицаний, и в кои-то веки к ним стоит прислушаться.
 Есть такие естественные языки, которые сами по себе исключают такие скользкие конструкции. Вот, к примеру, финский [click]: позитивная и негативные формы глагола отличаются так, что ни за что не перепутаешь. Или японский [click]: без очень важного конечного хвостика слово не существует вообще, его значение не определено. (Читается: Dētabēsu o sakujo shi**masu**, Dētabēsu o sakujo shi**naide**).
 -->
+
+---
+
+# Декомпозиция и фокусировка
+
+<div class="mt-6 grid grid-cols-[2fr_1fr] gap-6 max-w-6xl mx-auto" style="min-height: 380px">
+  <div class="flex flex-col justify-between">
+    <!-- Бабблы -->
+    <div class="grid grid-cols-[2fr_2fr] gap-3" style="height: calc(380px - 4rem);">
+      <!-- Баббл "Сложная задача" — растянут по высоте -->
+      <div 
+        class="p-4 rounded-xl border border-amber-600/40 bg-amber-900/20 text-white flex flex-col items-center justify-center text-center"
+        style="height: 100%;"
+      >
+        <div class="text-amber-300 font-bold text-base mb-2">Сложная задача</div>
+        <img 
+          src="/pages/include/cant_understand.png"
+          class="mt-1 max-w-full max-h-[160px] object-contain"
+        >
+      </div>
+      <!-- Три баббла справа — растянуты по высоте и с отступами -->
+      <div class="flex flex-col justify-between space-y-3" style="height: 100%;">
+        <div class="p-4 rounded-xl border border-cyan-600/40 bg-cyan-900/20 text-white flex items-center h-full">
+          <div class="text-cyan-300 font-bold text-base">🧠 Галлюцинации</div>
+        </div>
+        <div class="p-4 rounded-xl border border-purple-600/40 bg-purple-900/20 text-white flex items-center h-full">
+          <div class="text-purple-300 font-bold text-base">👁 Механизм внимания</div>
+        </div>
+        <div class="p-4 rounded-xl border border-indigo-600/40 bg-indigo-900/20 text-white flex items-center h-full">
+          <div class="text-indigo-300 font-bold text-base">📏 Размер контекста</div>
+        </div>
+      </div>
+    </div>
+    <!-- Цитата прижата к низу -->
+    <div class="p-4 bg-violet-900/20 rounded-lg border border-violet-700/50 text-white text-center text-sm mt-5">
+      <span class="text-violet-300 font-medium">Говорите с ИИ так, как говорили бы со стажёром:</span><br>
+      чётко, последовательно, с постановкой подзадач.
+    </div>
+  </div>
+
+  <!-- Правая колонка: изображение -->
+  <div class="flex items-start justify-center pt-2">
+    <img 
+      src="/pages/include/jun.png" 
+      class="rounded-lg border border-gray-700/50 shadow object-contain max-h-[380px]"
+      style="width: auto; height: auto;"
+    >
+  </div>
+
+</div>
+
+<!--
+Любая сложно и туманно поставленная задача активирует разом все ловушки. Возникает ощущение, что пытаешься взвалить неподъёмный проект на зелёного джуна, старательного, но бестолкового. И знаете что? Это ощущение правильное. Так и надо относиться к вашему ИИ-помощнику. Ставьте ему чёткие, понятные, ограниченные задачи. Когда-нибудь он научится сходу рисовать большую зелёную кнопку “Сделать хорошо”, но не сегодня.
+-->
+
+---
+
+## Почему vibe-coding выстрелил и попал?
+
+<div class="grid grid-cols-[3fr_2fr] gap-6 p-6 max-w-6xl mx-auto">
+  <!-- Столбик бабблов -->
+  <div class="flex flex-col gap-3">
+    <div class="p-3 rounded-lg border border-cyan-600/40 bg-cyan-900/20 text-cyan-200 text-sm font-medium text-center">
+      MVP
+    </div>
+    <div class="p-3 rounded-lg border border-purple-600/40 bg-purple-900/20 text-purple-200 text-sm font-medium text-center">
+      Прототипирование
+    </div>
+    <div class="p-3 rounded-lg border border-indigo-600/40 bg-indigo-900/20 text-indigo-200 text-sm font-medium text-center">
+      Простые скрипты
+    </div>
+    <div class="p-3 rounded-lg border border-pink-600/40 bg-pink-900/20 text-pink-200 text-sm font-medium text-center">
+      Низкий порог вхождения
+    </div>
+    <div class="p-3 rounded-lg border border-amber-600/40 bg-amber-900/20 text-amber-200 text-sm font-medium text-center">
+      Небольшие задачи
+    </div>
+    <div class="p-3 rounded-lg border border-violet-600/40 bg-violet-900/20 text-violet-200 text-sm font-medium text-center">
+      Объяснение кода
+    </div>
+    <div class="p-3 rounded-lg border border-blue-600/40 bg-blue-900/20 text-blue-200 text-sm font-medium text-center">
+      Автодополнение
+    </div>
+  </div>
+
+  <!-- Изображение справа -->
+  <div class="flex items-center justify-center">
+    <div class="w-full aspect-video bg-gray-800/30 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-500 text-xs">
+      <img 
+      src="/pages/include/robot.png" 
+    >
+    </div>
+  </div>
+</div>
+
+---
+preload: false
+---
+
+# Волшебство исчезает
+
+<div class="mt-10" />
+
+<div class="flex flex-col md:flex-row items-stretch gap-6">
+
+  <!-- Image on the left – unchanged -->
+  <div class="w-full md:w-1/3 max-w-xs bg-gray-800/40 border border-gray-700/50 rounded-lg overflow-hidden flex-shrink-0">
+    <img 
+      src="https://i.ibb.co/XZqZNh67/image-2025-11-22-14-56-26.png" 
+      class="w-full h-auto block"
+      alt="Industrial code complexity"
+    >
+  </div>
+
+  <!-- Animated points on the right -->
+  <div class="w-full md:w-2/3 flex-1">
+    <div class="bg-rose-900/30 rounded-xl border border-rose-600/50 p-5 h-full">
+      <div class="text-rose-300 font-semibold mb-4">В промышленной разработке:</div>
+      <v-clicks>
+        <div
+          v-for="(_, i) in 6"
+          :key="i"
+          :class="$clicks < (i + 1) ? 'opacity-0 translate-x--10' : 'opacity-100 translate-x-0'"
+          class="flex items-start gap-3 mb-4 transition-all duration-500 ease-out"
+        >
+          <div class="mt-0.5 text-rose-400 flex-shrink-0">
+            <div v-if="i === 0" i-carbon:code h-5 w-5 />
+            <div v-else-if="i === 1" i-carbon:document-subtract h-5 w-5 />
+            <div v-else-if="i === 2" i-carbon:rule h-5 w-5 />
+            <div v-else-if="i === 3" i-carbon:document-tasks h-5 w-5 />
+            <div v-else-if="i === 4" i-carbon:time h-5 w-5 />
+            <div v-else-if="i === 5" i-carbon:chat-off h-5 w-5 />
+          </div>
+          <div class="text-white text-m leading-relaxed">
+            <span v-if="i === 0">Большой объём кода</span>
+            <span v-else-if="i === 1">Большая доля legacy в этом коде</span>
+            <span v-else-if="i === 2">Сложившиеся строгие правила и паттерны</span>
+            <span v-else-if="i === 3">Много регламентов и гайдов нагружает контекст</span>
+            <span v-else-if="i === 4">Много времени на ревью</span>
+            <span v-else-if="i === 5">Часто никто не может нормально сформулировать требования</span>
+          </div>
+        </div>
+      </v-clicks>
+    </div>
+
+  </div>
+
+</div>
