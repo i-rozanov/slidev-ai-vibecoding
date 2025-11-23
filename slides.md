@@ -24,6 +24,12 @@ addons:
 
 Вайбкодинг здорового человека
 
+<!--
+Всем привет, кто меня не знает -- зовут меня Ваня Розанов -- бэкенд разработчик на Ашане, 
+и есть у меня хобби -- автоматизация всего, что можно автоматизировать. И, естественно, тема использования ИИ в разработке не могла меня обойти стороной. 
+Постоянно читаю новости и попробую сделать сегодня обзор, что есть миф, а что уже работает, что за новомодное слово "вайбкодинг" и как его применять.
+-->
+
 ---
 src: ./pages/01-intro.md
 ---
@@ -51,3 +57,20 @@ src: ./pages/06-vibecoding-recomendations.md
 ---
 src: ./pages/07-wanna-try.md
 ---
+
+---
+layout: center
+---
+
+<div class="flex flex-col items-center">
+  <h1 class="text-4xl font-bold mb-8">Спасибо за внимание!</h1>
+  
+  <div class="grid grid-cols-2 gap-8 mt-4">
+    <div class="flex flex-col items-center p-4">
+      <img src="/pages/include/qr_present.png" class="w-48">
+    </div>
+    <div class="flex flex-col items-center p-4">
+      <img src="/pages/include/qr_rozanov.png" class="w-48">
+    </div>
+  </div>
+</div>

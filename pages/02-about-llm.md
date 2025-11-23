@@ -1,3 +1,27 @@
+---
+layout: section
+---
+
+# Большие языковые модели
+
+<!--
+И прежде чем мы поговорим подробно про преимущества и недостатки разработки с помощью ИИ, надо немного погрузить вас в механизмы работы этого искуственного интеллекта.
+И когда мы говорим про ИИ-помощников, обычно подразумевают большие языковые модели, с помощью которых производится генерация.
+-->
+
+---
+layout: image
+image: /pages/include/rocket-science.jpeg
+preload: false
+backgroundSize: contain
+---
+
+<!--
+Если что не надо пугаться, здесь не стоит ожидать прямо Rocket Science, объяснять буду утрированно "на пальцах", кто шарит за нейросети -- я вас предупредил. Перемножения матриц и трансформеров мы не коснёмся)
+-->
+
+---
+
 # Как работает LLM
 
 <div class="grid grid-cols-[25%_5%_40%_5%_25%] gap-4 items-center justify-center h-[80%] min-h-80">
@@ -32,17 +56,31 @@
     </div>
 </div>
 
+<!--
+Итак, как работает эта большая языковая модель (large language model). 
+Прежде всего, в ней есть нейросеть [click], будем считать, что это то же самое, что и модель, и у неё [click] есть естественно вход и выход.
+Как известно, на входе и выходе у них текст. Знаю, что в какой-нибудь chatGPT можно и фотографию загрузить[click], такие модели называются мультимодальные, но сейчас остановимся именно на text-to-text моделях.
+-->
+
 ---
 layout: image
 image: "/pages/include/chatgpt-1.png"
 backgroundSize: contain
 ---
 
+<!--
+Никого уже не удивить чатом: обычный вопрос, обычный ответ. Но вы мне скажете: можно ведь в чате сразу несколько вопросов задавать!
+-->
+
 ---
 layout: image
 image: "/pages/include/chatgpt-2.png"
 backgroundSize: contain
 ---
+
+<!--
+И как-то же нейросеть понимает, что предыдущие сообщения зачастую относятся к этой же теме
+-->
 
 ---
 layout: two-cols-header
@@ -84,6 +122,10 @@ Q: а может, не крутится?
 A: может и не крутится, с чего бы ему крутиться
 ```
 
+<!--
+Действительно, в процессе общения вырабатывается контекст, который идёт на вход нейросети. Важно отметить, что на каждый запрос отправляется полностью все предыдущие сообщения в качестве контекста.
+-->
+
 ---
 
 # Как работает LLM
@@ -119,6 +161,10 @@ A: может и не крутится, с чего бы ему крутитьс
         </div>
     </div>
 </div>
+
+<!--
+Таким образом, у нас появляется помимо нашего промпта на входе модели ещё и некоторый контекст.
+-->
 
 ---
 
@@ -177,6 +223,10 @@ A: может и не крутится, с чего бы ему крутитьс
     </div>
 </v-click>
 
+<!--
+И наверняка вы слышали, что модели друг от друга отличаются размером контекстного окна.[click] Это как раз и есть максимальный размер текста, который может принять модель за один раз. И наверняка вы слышали про то, что размер этого окна измеряется в токенах.
+-->
+
 ---
 
 # Как работает LLM
@@ -190,6 +240,10 @@ A: может и не крутится, с чего бы ему крутитьс
 ## Русский язык
 
 <span class="tokenizer-tkn bg-[#e9950c]">Р</span><span class="tokenizer-tkn bg-[#2e95d3]">анее</span><span class="tokenizer-tkn bg-[#00a67d]"> в</span><span class="tokenizer-tkn bg-[#df3079]"> русском</span><span class="tokenizer-tkn bg-[#f22c3d]"> языке</span><span class="tokenizer-tkn bg-[#e9950c]"> большинство</span><span class="tokenizer-tkn bg-[#2e95d3]"> букв</span><span class="tokenizer-tkn bg-[#00a67d]"> явля</span><span class="tokenizer-tkn bg-[#df3079]">лись</span><span class="tokenizer-tkn bg-[#f22c3d]"> отдель</span><span class="tokenizer-tkn bg-[#e9950c]">ными</span><span class="tokenizer-tkn bg-[#2e95d3]"> ток</span><span class="tokenizer-tkn bg-[#00a67d]">ен</span><span class="tokenizer-tkn bg-[#df3079]">ами</span><span class="tokenizer-tkn bg-[#f22c3d]">.</span><span class="tokenizer-tkn bg-[#e9950c]"> В</span><span class="tokenizer-tkn bg-[#2e95d3]"> современных</span><span class="tokenizer-tkn bg-[#00a67d]"> модел</span><span class="tokenizer-tkn bg-[#df3079]">ях</span><span class="tokenizer-tkn bg-[#f22c3d]"> раз</span><span class="tokenizer-tkn bg-[#e9950c]">ницы</span><span class="tokenizer-tkn bg-[#2e95d3]"> в</span><span class="tokenizer-tkn bg-[#00a67d]"> количестве</span><span class="tokenizer-tkn bg-[#df3079]"> ток</span><span class="tokenizer-tkn bg-[#f22c3d]">ен</span><span class="tokenizer-tkn bg-[#e9950c]">ов</span><span class="tokenizer-tkn bg-[#2e95d3]"> практически</span><span class="tokenizer-tkn bg-[#00a67d]"> нет</span><span class="tokenizer-tkn bg-[#df3079]">.</span>
+
+<!--
+Что же такое токены? Нейросеть рассматривает слова или части слов как некоторую смысловую единицу для понимания текста. Любой текст нейросеть превращает в набор токенов, на слайде они помечены разными цветами, для английского языка это почти всегда 1 токен -- 1 слово, в русском ранее было по одному слогу, сейчас процентов на 10-20 отличается. Так что можете экономить контекст, если подучите английский.
+-->
 
 ---
 
@@ -228,6 +282,10 @@ A: может и не крутится, с чего бы ему крутитьс
     </div>
 </div>
 
+<!--
+И вот мы уже дошли, что на вход нейросети подаются токены контекста и промпта. Что же на выходе?
+-->
+
 ---
 layout: quote
 ---
@@ -237,6 +295,10 @@ layout: quote
 <span>Последовательная генерация токенов</span>
 
 <TypewriterText text="Если Вы когда-либо общались с ИИ-чатами, то замечали, что текст выводится последовательно. На самом деле, это происходит потому, что ответ генерируется и отображается по частям — так называемыми токенами — в режиме потоковой передачи (streaming). Каждый токен (чаще всего это слово, подслово или знак препинания) появляется на экране сразу после того, как модель его сгенерировала, не дожидаясь завершения всего ответа. Такой подход не только ускоряет восприятие ответа, но и создаёт эффект живого диалога, будто собеседник думает и говорит в реальном времени. Кроме того, постепенное появление текста снижает когнитивную нагрузку и делает взаимодействие с ИИ более естественным и интуитивным." />
+
+<!--
+Наверняка вы замечали, что текст выводится последовательно в этих ваших chatgpt. И это сделано не сколько для красивой анимации, а связано с механизмов вывода следующего слова.
+-->
 
 ---
 layout: two-cols
@@ -358,6 +420,10 @@ layout: two-cols
 <div text-3><br></div>
 <div text-4xl>___________________</div>
 
+<!--
+Если кратко, то нейросеть постоянно пытается продолжить [click] [click] [click] [click] [click] [click] [click] предложения на основании предыдущего текста, а именно оно пытается придумать следующий токен на базе предыдущих токенов. Давайте посмотрим подробнее, как тут будет сгенерирован последний токен.
+-->
+
 ---
 
 # Как работает LLM
@@ -383,6 +449,10 @@ xychart
 <img absolute top--2 left-23 class="scale-7" src="https://pofoto.club/uploads/posts/2022-08/1660370301_3-pofoto-club-p-gubastaya-riba-3.jpg">
 
 <img absolute top-63 left-152 class="scale-35" src="https://images.steamusercontent.com/ugc/861733669324300640/13A0FBCBABF1D4C512B109C6F68B9156AA4C927A/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false">
+
+<!--
+Допустим, гу и ся это два разных токена, и мы находимся в ситуации, когда выведено к этому моменту уже "гу". Тогда нейросеть буквально подбрасывает многогранный кубик, где с разной вероятностью выпадают следующие токены. И если бы мы уточнили в контексте или промпте, что бабушка живёт во Вьетнаме, могли бы получить гука с большей вероятностью. Сейчас важно для понимания, что даже если мы будем объяснять, что это детский стишок, то вероятность гуся никогда не станет 100%, но вполне может быть 99.9% потому что алгоритм у нас недетерминированный.
+-->
 
 ---
 addons:
@@ -436,11 +506,88 @@ arc="0.1"
 />
 </v-click>
 
+<!--
+То есть за один прогон нейросети мы получаем не здоровенный текст, а один токен, который тут же дописывается в конец [click] и идёт снова на вход для генерации следующего токена, пока не решит, что, мол, dixi, я сказал достаточно.
+-->
+
+---
+preload: false
 ---
 
-# Промежуточные выводы
+# Промежуточные выводы о работе LLM
 
-- LLM вычисляет токен за токеном
-- LLM статистически подбирает слова по предыдущим + контексту
-- Генерация есть перекомбинация других известных примеров
-- Вероятность получить предполагаемый токен не 100%
+<div mt-10 />
+
+<div flex items-center gap-4>
+
+<v-clicks>
+  <div
+    :class="$clicks < 1 ? 'translate-x--20' : 'translate-x-0'"
+    rounded-lg
+    border="2 solid blue-800" bg="blue-800/20"
+    backdrop-blur
+    flex-1 h-full
+    transition duration-500 ease-in-out
+  >
+    <div px-5 py-16 flex items-center justify-center>
+      <div i-carbon:CarouselHorizontal h-20 w-20 />
+    </div>
+    <div bg="blue-800/30" w-full px-4 py-2 h="5rem" flex items-center justify-center text-center text-base>
+      <span>LLM вычисляет токен за токеном</span>
+    </div>
+  </div>
+  <div
+    :class="$clicks < 2 ? 'translate-x--20' : 'translate-x-0'"
+    rounded-lg
+    border="2 solid blue-800" bg="blue-800/20"
+    backdrop-blur
+    flex-1 h-full
+    transition duration-500 ease-in-out
+  >
+    <div px-5 py-16 flex items-center justify-center>
+      <div i-carbon:text-link-analysis h-20 w-20 />
+    </div>
+    <div bg="blue-800/30" w-full px-4 py-2 h="5rem" flex items-center justify-center text-center text-base>
+      <span>LLM статистически подбирает слова</span>
+    </div>
+  </div>
+  <div
+    :class="$clicks < 3 ? 'translate-x--20' : 'translate-x-0'"
+    rounded-lg
+    border="2 solid blue-800" bg="blue-800/20"
+    backdrop-blur
+    flex-1 h-full
+    transition duration-500 ease-in-out
+  >
+    <div px-5 py-16 flex items-center justify-center>
+      <div i-carbon:renew h-20 w-20 />
+    </div>
+    <div bg="blue-800/30" w-full px-4 py-2 h="5rem" flex items-center justify-center text-center text-base>
+      <span>Генерация — перекомбинация примеров</span>
+    </div>
+  </div>
+  <div
+    :class="$clicks < 4 ? 'translate-x--20' : 'translate-x-0'"
+    rounded-lg
+    border="2 solid yellow-800" bg="yellow-800/20"
+    backdrop-blur
+    flex-1 h-full
+    transition duration-500 ease-in-out
+  >
+    <div px-5 py-16 flex items-center justify-center>
+      <div i-carbon:ChartBarStacked h-20 w-20 />
+    </div>
+    <div bg="yellow-800/30" w-full px-4 py-2 h="5rem" flex items-center justify-center text-center text-base>
+      <span>Вероятность ≠ 100%</span>
+    </div>
+  </div>
+</v-clicks>
+
+</div>
+
+<!--
+Что важно зафиксировать: генерация токенов последовательная [click], 
+и если в какой-то момент сворачивает не туда, то продолжает подбирать удобное продолжение фразы [click]
+Также любая генерация это не манна небесная, а статистически наиболее вероятное продолжение на основании обучения [click]
+И важно помнить, что получение всегда ожидаемого результата невозможно по дизайну технологии [click]
+-->
