@@ -552,7 +552,7 @@ MCP серверов есть огромное количество, не тол
   <!-- Картинка слева -->
   <div class="w-1/3 max-w-xs bg-gray-800/40 border border-gray-700/50 rounded-lg overflow-hidden flex-shrink-0">
     <img
-      src="/pages/include/2025-11-22_18-54.png"
+      src="/2025-11-22_18-54.png"
       class="w-full h-auto block"
       loading="lazy"
     >
@@ -572,7 +572,7 @@ MCP серверов есть огромное количество, не тол
 
 ---
 layout: image
-image: "/pages/include/morpheus.jpg"
+image: "/morpheus.jpg"
 preload: false
 ---
 

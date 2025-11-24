@@ -66,10 +66,10 @@ layout: center
   
   <div class="grid grid-cols-2 gap-8 mt-4">
     <div class="flex flex-col items-center p-4">
-      <img src="/pages/include/qr_present.png" class="w-48">
+      <img src="/qr_present.png" class="w-48">
     </div>
     <div class="flex flex-col items-center p-4">
-      <img src="/pages/include/qr_rozanov.png" class="w-48">
+      <img src="/qr_rozanov.png" class="w-48">
     </div>
   </div>
 </div>

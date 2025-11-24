@@ -162,7 +162,7 @@ Alibaba представили в рамках своего IDE с AI агент
 # Декомпозиция декомпозиции
 
 <div class="flex flex-col items-center">
-  <img src="/pages/include/langchain.excalidraw.png" class="corner-image">
+  <img src="/langchain.excalidraw.png" class="corner-image">
 </div>
 
 <!--

@@ -11,7 +11,7 @@ layout: section
 
 ---
 layout: image
-image: /pages/include/rocket-science.jpeg
+image: /rocket-science.jpeg
 preload: false
 backgroundSize: contain
 ---
@@ -64,7 +64,7 @@ backgroundSize: contain
 
 ---
 layout: image
-image: "/pages/include/chatgpt-1.png"
+image: "/chatgpt-1.png"
 backgroundSize: contain
 ---
 
@@ -74,7 +74,7 @@ backgroundSize: contain
 
 ---
 layout: image
-image: "/pages/include/chatgpt-2.png"
+image: "/chatgpt-2.png"
 backgroundSize: contain
 ---
 
@@ -315,7 +315,7 @@ layout: two-cols
 <br>
 <v-click at="7">
 <img 
-    src="/pages/include/duolingo.gif"
+    src="/duolingo.gif"
     height = 60%
     width = 60%
 />

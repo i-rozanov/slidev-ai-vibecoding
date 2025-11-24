@@ -81,7 +81,7 @@ class: "text-white"
 
 ---
 layout: image
-image: "/pages/include/edge.png"
+image: "/edge.png"
 preload: false
 ---
 
@@ -157,7 +157,7 @@ preload: false
 
 ---
 layout: image
-image: /pages/include/lizard.jpg
+image: /lizard.jpg
 backgroundSize: contain
 ---
 
@@ -188,7 +188,7 @@ glowSeed: 55
     <span text-gray-8>DO NOT </span><span>DROP THE DATABASE</span>
   </div>
   
-  <img v-click.at="[2]" src="/pages/include/bear.png" class="corner-image">
+  <img v-click.at="[2]" src="/bear.png" class="corner-image">
   
   <div absolute top-50 v-click.at="3">
     <span class="blue-text">Pudota</span> <span class="white-text">tietokanta. </span> <br/>
@@ -287,7 +287,7 @@ layout: center
       >
         <div class="text-amber-300 font-bold text-base mb-2">Сложная задача</div>
         <img
-          src="/pages/include/cant_understand.png"
+          src="/cant_understand.png"
           class="mt-1 max-w-full max-h-[160px] object-contain"
         >
       </div>
@@ -314,7 +314,7 @@ layout: center
   <!-- Правая колонка: изображение -->
   <div class="flex items-start justify-center pt-2">
     <img
-      src="/pages/include/jun.png"
+      src="/jun.png"
       class="rounded-lg border border-gray-700/50 shadow object-contain max-h-[380px]"
       style="width: auto; height: auto;"
     >
@@ -371,8 +371,8 @@ preload: false
       ]"
     >
     <img
-      src="/pages/include/robot.png"
-      class="bg-gray-800/30 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-500 text-xs"
+      src="/robot.png"
+      class="bg-gray-800/30 border-gray-70/50 rounded-lg flex items-center justify-center text-gray-500 text-xs"
     >
     </div>
   </div>

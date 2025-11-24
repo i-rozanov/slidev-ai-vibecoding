@@ -51,7 +51,7 @@ layout: two-cols
 ---
 
 <img 
-    src="/pages/include/goolge-25-percent.png"
+    src="/goolge-25-percent.png"
     height = 80%
     width = 80%
 />
@@ -94,7 +94,7 @@ layout: default
 - Время выполнения задач увеличилось на 19%
 
 <img
-src="/pages/include/30min.jpg"
+src="/30min.jpg"
 height = 30%
 width = 30%
 absolute top-40 right-20

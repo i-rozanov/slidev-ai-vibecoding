@@ -100,7 +100,7 @@ layout: center
 ---
 
 <div style="position: relative; z-index: 1; background-color: black; padding: 1em; border-radius: 0.5em;">
-  <video style="opacity: 1;" controls src="../pages/include/cline.webm" title="IDE agent example"></video>
+  <video style="opacity: 1;" controls src="../cline.webm" title="IDE agent example"></video>
 </div>
 
 <!--
@@ -321,7 +321,7 @@ glowSeed: 206
 
 ---
 layout: image
-image: "/pages/include/crewai.webp"
+image: "/crewai.webp"
 backgroundSize: 80%
 ---
 
