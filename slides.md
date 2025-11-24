@@ -14,10 +14,9 @@ clicks: 0
 glowSeed: 50
 mdc: true
 export:
-  timeout: 60000 # Increase from default 30000ms to 60000ms
+  timeout: 120000
 addons:
   - fancy-arrow
-  - slidev-addon-excalidraw
 ---
 
 # Инструменты ИИ в разработке: <br>Ожидание vs Реальность

@@ -3,7 +3,7 @@ name: Export PDF and Create Release
 on:
   push:
     tags:
-      - "v*.*.*" # Trigger on version tags like v1.0
+      - "v*.*" # Trigger on version tags like v1.0
   workflow_dispatch: # Allow manual trigger for testing
 
 permissions:
@@ -36,7 +36,7 @@ jobs:
           # Create output directory
           mkdir -p exports
           # Export the presentation as PDF
-          npm run export -- --dark --output exports/presentation.pdf
+          npm run export -- --dark --with-clicks --output exports/presentation.pdf
 
       - name: List exported files
         run: ls -la exports/
