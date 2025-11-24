@@ -20,9 +20,6 @@ importers:
       seedrandom:
         specifier: ^3.0.5
         version: 3.0.5
-      slidev-addon-excalidraw:
-        specifier: ^1.0.4
-        version: 1.0.4
       slidev-addon-fancy-arrow:
         specifier: ^0.13.13
         version: 0.13.13(typescript@5.9.3)
@@ -2244,9 +2241,6 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
-
-  slidev-addon-excalidraw@1.0.4:
-    resolution: {integrity: sha512-BLSn1RDXbcIvUypzKPZxc62sCD15hUEk3wOdL7UP8mI6StN4em3bsWNKQp/10dECK5GXRu9Q6Rlxaau9WkKvdw==}
 
   slidev-addon-fancy-arrow@0.13.13:
     resolution: {integrity: sha512-hR18EuwsLHiZKxryG/OdaUJlT7W0O0V9SwRkt54cHpB1Gv8oekawV4EIlSft0ZiqgsAGIr+/ukDSDUY2de43MQ==}
@@ -5370,8 +5364,6 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
-
-  slidev-addon-excalidraw@1.0.4: {}
 
   slidev-addon-fancy-arrow@0.13.13(typescript@5.9.3):
     dependencies:
