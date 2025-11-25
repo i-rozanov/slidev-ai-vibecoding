@@ -325,7 +325,7 @@ class MigrationAgent(SpecialistAgent):
 # Результат
 
 ```php {*|14}
-class CreateRatingsTable extends Migration
+class CreateVotesTable extends Migration
 {
     public function up(): void
     {

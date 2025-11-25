@@ -112,7 +112,7 @@ preload: false
 </v-click>
 
 <v-click>
-<div class="absolute top-12 right-12 w-84">
+<div class="absolute top-12 right-12 w-90">
   <div class="p-5 bg-purple-900/30 rounded-xl border border-purple-700/50 shadow-2xl backdrop-blur-sm">
     <h3 class="text-2xl font-bold mb-4 text-purple-200 flex justify-end items-center gap-2">
       <span>Недостаточный контекст</span>

@@ -95,7 +95,7 @@ class: "text-white"
 
 ## Лучшие практики
 
-<div class="mt-6 grid grid-cols-3 gap-4 w-full px-6 pb-16 max-w-full box-border">
+<div class="mt-6 grid grid-cols-3 gap-4 w-full px-2 pb-16 max-w-full box-border">
 
   <div class="p-4 rounded-xl border border-purple-700/50 bg-purple-900/30 text-white flex flex-col justify-start">
     <strong class="text-purple-200 flex items-center gap-2 text-sm font-bold"><span>📋</span>Планируйте</strong>
