@@ -175,7 +175,7 @@ Alibaba представили в рамках своего IDE с AI агент
 
 <span>Подключаем локальный провайдер</span>
 
-```python {*|1|4}
+```python {*|1|5}
 llm = OllamaLLM(model='qwen3:latest', format="json")
 
 parser = JsonOutputParser(pydantic_object=Decomposition)
